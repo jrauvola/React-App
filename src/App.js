@@ -6,9 +6,7 @@ class App extends Component {
   state = {
     characters: [],
   }
-}
-
-removeCharacter = index => {
+  removeCharacter = index => {
   const { characters } = this.state
 
   this.setState({
@@ -28,5 +26,13 @@ render() {
     </div>
   )
 }
+handleSubmit = character => {
+  this.setState({ characters: [...this.state.characters, character] })
+}
+<Form handleSubmit={this.handleSubmit} />
+
+}
+
+
 
 export default App

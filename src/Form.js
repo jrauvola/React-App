@@ -7,7 +7,7 @@ class Form extends Component {
   }
 
   state = this.initialState
-}
+
 
 handleChange = event => {
   const { name, value } = event.target
@@ -38,6 +38,15 @@ render() {
         onChange={this.handleChange} />
     </form>
   );
+}
+
+submitForm = () => {
+  this.props.handleSubmit(this.state)
+  this.setState(this.initialState)
+}
+
+<input type="button" value="Submit" onClick={this.submitForm} />
+
 }
 
 export default Form;
