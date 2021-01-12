@@ -17,6 +17,7 @@ class App extends Component {
 }
 
 render() {
+  <Form handleSubmit={this.handleSubmit} />
   const { characters } = this.state
 
   return (
@@ -29,10 +30,7 @@ render() {
 handleSubmit = character => {
   this.setState({ characters: [...this.state.characters, character] })
 }
-<Form handleSubmit={this.handleSubmit} />
 
 }
-
-
 
 export default App

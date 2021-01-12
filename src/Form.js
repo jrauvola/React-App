@@ -20,6 +20,9 @@ handleChange = event => {
 render() {
   const { name, job } = this.state;
 
+<input type="button" value="Submit" onClick={this.submitForm} />
+
+
   return (
     <form>
       <label htmlFor="name">Name</label>
@@ -44,8 +47,6 @@ submitForm = () => {
   this.props.handleSubmit(this.state)
   this.setState(this.initialState)
 }
-
-<input type="button" value="Submit" onClick={this.submitForm} />
 
 }
 
