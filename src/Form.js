@@ -17,10 +17,13 @@ handleChange = event => {
   })
 }
 
+submitForm = () => {
+  this.props.handleSubmit(this.state)
+  this.setState(this.initialState)
+}
+
 render() {
   const { name, job } = this.state;
-
-<input type="button" value="Submit" onClick={this.submitForm} />
 
 
   return (
@@ -39,15 +42,10 @@ render() {
         id="job"
         value={job}
         onChange={this.handleChange} />
+      <input type ="button" value ="Submit" onClick={this.submitForm} />
     </form>
   );
 }
-
-submitForm = () => {
-  this.props.handleSubmit(this.state)
-  this.setState(this.initialState)
-}
-
 }
 
 export default Form;
