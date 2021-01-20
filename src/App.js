@@ -15,7 +15,17 @@ class App extends Component {
         return i !== index
       }),
     })
-  }
+    return axios.delete('http://localhost:5000/users', characters)
+    .then(function (response) {
+      console.log(response);
+      return (response.status === 200);
+    })
+    .catch(function (error) {
+      console.log(error);
+      return false;
+    });
+ }
+  
 
 handleSubmit = character => {
   this.makePostCall(character).then( callResult => {
@@ -64,6 +74,7 @@ render() {
 handleSubmit = character => {
   this.setState({ characters: [...this.state.characters, character] })
 }
+
 
 }
 export default App
